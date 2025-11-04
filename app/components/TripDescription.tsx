@@ -14,28 +14,7 @@ import GroupsIcon from '@mui/icons-material/Groups';
 import CalendarMonthIcon from '@mui/icons-material/CalendarMonth';
 
 const TripDescription: React.FC = () => {
-  const features = [
-    {
-      icon: <TerrainIcon sx={{ fontSize: { xs: 40, md: 50 } }} />,
-      title: 'Mountain Adventures',
-      description: 'Explore pristine powder in the heart of the Andes',
-    },
-    {
-      icon: <AcUnitIcon sx={{ fontSize: { xs: 40, md: 50 } }} />,
-      title: 'Perfect Conditions',
-      description: 'Experience optimal snow quality from June to October',
-    },
-    {
-      icon: <GroupsIcon sx={{ fontSize: { xs: 40, md: 50 } }} />,
-      title: 'Expert Guides',
-      description: 'Led by certified professionals with local expertise',
-    },
-    {
-      icon: <CalendarMonthIcon sx={{ fontSize: { xs: 40, md: 50 } }} />,
-      title: 'Flexible Schedules',
-      description: 'Custom trips tailored to your skill level and timeline',
-    },
-  ];
+  
 
   return (
     <Box sx={{ py: { xs: 4, sm: 6, md: 8 }, backgroundColor: 'background.default', px: { xs: 2, sm: 3 } }}>
@@ -47,104 +26,74 @@ const TripDescription: React.FC = () => {
           gutterBottom
           sx={{
             fontSize: { xs: '1.75rem', sm: '2rem', md: '2.5rem' },
+            color: '#D2691E',
           }}
         >
-          Our Ski Trips
+          Andean Ski Guides: Experience the Magic of the Andes
         </Typography>
         <Typography
           variant="body1"
           textAlign="center"
           sx={{
             mb: { xs: 4, sm: 5, md: 6 },
-            color: 'text.secondary',
+            color: '#CD853F',
             maxWidth: 800,
             mx: 'auto',
             fontSize: { xs: '0.95rem', md: '1rem' },
             px: { xs: 2, sm: 0 },
+            fontStyle: 'italic',
           }}
         >
-          Discover world-class skiing in the Southern Hemisphere's most spectacular mountain
-          ranges. Our guided trips offer unforgettable experiences for skiers of all levels.
+          Discover your essence in the magic of the Andes, where untamed nature reigns beneath a sea of stars and the ancestral guardians fly dressed as condors.
         </Typography>
 
-        <Box
-          sx={{
-            display: 'grid',
-            gridTemplateColumns: {
-              xs: '1fr',
-              sm: 'repeat(2, 1fr)',
-              md: 'repeat(4, 1fr)',
-            },
-            gap: { xs: 2, sm: 3, md: 4 },
-          }}
-        >
-          {features.map((feature, index) => (
-            <Card
-              key={index}
-              sx={{
-                display: 'flex',
-                flexDirection: 'column',
-                alignItems: 'center',
-                textAlign: 'center',
-                p: { xs: 2, sm: 2.5, md: 3 },
-                backgroundColor: 'background.paper',
-                transition: 'transform 0.3s, box-shadow 0.3s',
-                '&:hover': {
-                  transform: 'translateY(-8px)',
-                  boxShadow: 6,
-                },
-              }}
-            >
-              <Box sx={{ color: 'primary.main', mb: 2 }}>
-                {feature.icon}
-              </Box>
-              <CardContent sx={{ p: 0 }}>
-                <Typography
-                  variant="h6"
-                  component="h3"
-                  gutterBottom
-                  sx={{ fontSize: { xs: '1.1rem', md: '1.25rem' } }}
-                >
-                  {feature.title}
-                </Typography>
-                <Typography
-                  variant="body2"
-                  color="text.secondary"
-                  sx={{ fontSize: { xs: '0.875rem', md: '0.875rem' } }}
-                >
-                  {feature.description}
-                </Typography>
-              </CardContent>
-            </Card>
-          ))}
-        </Box>
-
         <Box sx={{ mt: { xs: 4, sm: 5, md: 6 }, px: { xs: 1, sm: 0 } }}>
+          <Typography
+            variant="body1"
+            paragraph
+            sx={{ fontSize: { xs: '0.95rem', md: '1rem' } }}
+          >
+            Whether on skis or snowboards, we invite you to explore our snow-covered mountains, always prioritizing safety in avalanche terrain and the enjoyment of every participant on our adventures.
+          </Typography>
+          <Typography
+            variant="body1"
+            paragraph
+            sx={{ fontSize: { xs: '0.95rem', md: '1rem' } }}
+          >
+            Through constant training, we aim to provide you with confidence and joy so you can experience an unforgettable "Andean Ski Trip."
+          </Typography>
           <Typography
             variant="h4"
             component="h3"
             gutterBottom
-            sx={{ fontSize: { xs: '1.5rem', sm: '1.75rem', md: '2rem' } }}
+            sx={{
+              fontSize: { xs: '1.5rem', sm: '1.75rem', md: '2rem' },
+              mt: 3,
+              color: '#D2691E',
+            }}
           >
-            What to Expect
+            Explore the Cuyo Region
           </Typography>
           <Typography
             variant="body1"
             paragraph
             sx={{ fontSize: { xs: '0.95rem', md: '1rem' } }}
           >
-            Our ski trips combine adventure with safety, offering access to some of South America's
-            most pristine skiing terrain. Whether you're seeking backcountry powder, resort skiing,
-            or ski touring experiences, we have the perfect trip for you.
+            We'll journey through the Cuyo Region, a ski area surrounded by colossal mountains like Aconcagua.
           </Typography>
           <Typography
             variant="body1"
             paragraph
             sx={{ fontSize: { xs: '0.95rem', md: '1rem' } }}
           >
-            Each trip includes experienced local guides, safety equipment, and transportation to
-            the best snow conditions. We operate in various locations throughout the Andes,
-            including Chile and Argentina, ensuring year-round opportunities for incredible skiing.
+            The varied snowpacks, orientations, and an average altitude of 3500 meters above sea level offer powder snow conditions that last for days.
+          </Typography>
+          <Typography
+            variant="body1"
+            paragraph
+            sx={{ fontSize: { xs: '0.95rem', md: '1rem' } }}
+          >
+            Enjoy the culture of the Andes through a ski trip.
           </Typography>
         </Box>
       </Container>

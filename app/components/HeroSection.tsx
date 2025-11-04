@@ -51,19 +51,23 @@ const HeroSection: React.FC<HeroSectionProps> = ({ onTabChange, currentTab }) =>
     <Box sx={{ flexGrow: 1 }}>
       <AppBar position="static" sx={{ backgroundColor: 'primary.main' }}>
         <Toolbar sx={{ px: { xs: 1, sm: 2 } }}>
-          {/* Logo */}
+          {/* Logo Placeholder */}
           <Box
             sx={{
               position: 'relative',
-              width: { xs: 60, sm: 80, md: 120 },
+              width: { xs: 40, sm: 50, md: 60 },
               height: { xs: 40, sm: 50, md: 60 },
-              mr: { xs: 1, sm: 2, md: 4 },
+              mr: 2,
+              display: 'flex',
+              alignItems: 'center',
+              justifyContent: 'center',
             }}
           >
             <Image
               src="/logo.png"
               alt="Andean Ski Guides Logo"
-              fill
+              width={60}
+              height={60}
               style={{ objectFit: 'contain' }}
               priority
             />
@@ -165,32 +169,65 @@ const HeroSection: React.FC<HeroSectionProps> = ({ onTabChange, currentTab }) =>
             color: 'white',
             py: { xs: 5.75, sm: 6.75, md: 7.75 },
             px: { xs: 2, sm: 3 },
-            textAlign: 'center',
+            display: 'flex',
+            alignItems: 'center',
+            justifyContent: 'center',
           }}
         >
           <Container maxWidth="md">
-            <Typography
-              variant="h1"
-              component="h1"
-              gutterBottom
+            <Box
               sx={{
-                fontSize: { xs: '1.85rem', sm: '2.25rem', md: '2.75rem' },
-                fontWeight: { xs: 600, md: 700 },
+                display: 'flex',
+                alignItems: 'center',
+                justifyContent: 'flex-start',
               }}
             >
-              Andean Ski Guides
-            </Typography>
-            <Typography
-              variant="h5"
-              component="p"
-              sx={{
-                mt: 1.5,
-                opacity: 0.9,
-                fontSize: { xs: '1rem', sm: '1.15rem', md: '1.35rem' },
-              }}
-            >
-              Experience the thrill of skiing in the majestic Andes Mountains
-            </Typography>
+              {/* Logo */}
+              <Box
+                sx={{
+                  position: 'relative',
+                  width: { xs: 200, sm: 280, md: 400 },
+                  height: { xs: 133, sm: 187, md: 267 },
+                  flexShrink: 0,
+                  paddingLeft: 0,
+                  marginLeft: 0,
+                }}
+              >
+                <Image
+                  src="/logo2.png"
+                  alt="Andean Ski Guides Logo"
+                  fill
+                  style={{ objectFit: 'contain' }}
+                  priority
+                />
+              </Box>
+
+              {/* Text Content */}
+              <Box sx={{ textAlign: 'left' }}>
+                <Typography
+                  variant="h1"
+                  component="h1"
+                  gutterBottom
+                  sx={{
+                    fontSize: { xs: '1.85rem', sm: '2.25rem', md: '2.75rem' },
+                    fontWeight: { xs: 600, md: 700 },
+                  }}
+                >
+                  Andean Ski Guides
+                </Typography>
+                <Typography
+                  variant="h5"
+                  component="p"
+                  sx={{
+                    mt: 1.5,
+                    opacity: 0.9,
+                    fontSize: { xs: '1rem', sm: '1.15rem', md: '1.35rem' },
+                  }}
+                >
+                  Experience the thrill of skiing in the majestic Andes Mountains
+                </Typography>
+              </Box>
+            </Box>
           </Container>
         </Box>
       )}
