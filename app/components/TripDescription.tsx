@@ -5,13 +5,7 @@ import {
   Container,
   Typography,
   Box,
-  Card,
-  CardContent,
 } from '@mui/material';
-import TerrainIcon from '@mui/icons-material/Terrain';
-import AcUnitIcon from '@mui/icons-material/AcUnit';
-import GroupsIcon from '@mui/icons-material/Groups';
-import CalendarMonthIcon from '@mui/icons-material/CalendarMonth';
 import DestinationMap from './DestinationMap';
 import { useTranslation } from 'react-i18next';
 

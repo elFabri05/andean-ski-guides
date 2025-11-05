@@ -34,6 +34,10 @@ const ImageCarousel: React.FC = () => {
       url: '/images/carousel/image4.jpg',
       alt: 'Backcountry skiing adventure',
     },
+    {
+      url: '/images/carousel/image5.jpg',
+      alt: 'Andean ski adventure',
+    },
   ];
 
   // Auto-slide every 5 seconds
@@ -85,6 +89,7 @@ const ImageCarousel: React.FC = () => {
           if (index === 1) bgPosition = 'center'; // center
           if (index === 2) bgPosition = 'center 73%'; // 27% from bottom
           if (index === 3) bgPosition = 'center 77%'; // 23% from bottom
+          if (index === 4) bgPosition = 'center'; // center
 
           return (
             <Box

@@ -241,7 +241,7 @@ const Contact: React.FC = () => {
                     label={t('contact.form.message')}
                     name="message"
                     multiline
-                    rows={{ xs: 4, sm: 6 }}
+                    rows={6}
                     value={formData.message}
                     onChange={handleChange}
                     required

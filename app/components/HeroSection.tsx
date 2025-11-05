@@ -187,9 +187,6 @@ const HeroSection: React.FC<HeroSectionProps> = ({ onTabChange, currentTab }) =>
                   width: { xs: 200, sm: 280, md: 400 },
                   height: { xs: 187, sm: 287, md: 287 },
                   flexShrink: 0,
-                  paddingLeft: 0,
-                  margin: 0,
-                  padding: 0,
                 }}
               >
                 <Image
@@ -231,6 +228,30 @@ const HeroSection: React.FC<HeroSectionProps> = ({ onTabChange, currentTab }) =>
                 </Typography>
               </Box>
             </Box>
+          </Container>
+        </Box>
+      )}
+
+      {/* Next Trip Banner */}
+      {currentTab === 0 && (
+        <Box
+          sx={{
+            backgroundColor: '#FF8C00',
+            color: 'white',
+            py: 2,
+            textAlign: 'center',
+          }}
+        >
+          <Container maxWidth="md">
+            <Typography
+              variant="h6"
+              sx={{
+                fontSize: { xs: '1rem', md: '1.2rem' },
+                fontWeight: 600,
+              }}
+            >
+              {t('hero.nextTrip')}
+            </Typography>
           </Container>
         </Box>
       )}
