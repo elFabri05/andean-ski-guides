@@ -1,0 +1,55 @@
+{
+  "nav": {
+    "home": "Home",
+    "tripDescription": "Trip Description",
+    "contact": "Contact"
+  },
+  "hero": {
+    "title": "Andean Ski Guides",
+    "subtitle": "Discover your essence in the magic of the Andes, where untamed nature reigns beneath a sea of stars and the ancestral guardians fly dressed as condors."
+  },
+  "tripDescription": {
+    "experienceTitle": "Experience the Magic of the Andes",
+    "experiencePara1": "Whether on skis or snowboards, we invite you to explore our snow-covered mountains, always prioritizing safety in avalanche terrain and the enjoyment of every participant on our adventures.",
+    "experiencePara2": "Through constant training, we aim to provide you with confidence and joy so you can experience an unforgettable \"Andean Ski Trip\".",
+    "cuyoTitle": "Explore the Cuyo Region",
+    "cuyoPara1": "We'll journey through the Cuyo Region, a ski area surrounded by colossal mountains like Aconcagua.",
+    "cuyoPara2": "The varied snowpacks, orientations, and an average altitude of 3500 meters above sea level offer powder snow conditions that last for days.",
+    "cuyoPara3": "Enjoy the culture of the Andes through a ski trip.",
+    "destinationsTitle": "Our Destinations",
+    "lasLenas": {
+      "title": "Las Leñas",
+      "para1": "Located in the heart of the Andes, this ski resort founded in 1983 currently represents one of the most important ski resorts in South America. With its maximum height of 3,400 meters above sea level and 27 km of slopes.",
+      "para2": "The great attraction of this place is its scenic beauty, Andean colors and above all its \"easy\" access to off-piste terrain. With endless variants in terms of slopes, corridors, and terrain to have fun and enjoy the quality of Andean snow!",
+      "para3": "The trip from the city of Mendoza (340km) to the ski resort is a road that crosses towns, desolate places, and inspiring landscapes at the foot of the mountain range until entering its domains."
+    },
+    "pasoPehuenche": {
+      "title": "Paso Pehuenche",
+      "para1": "Legend has it that this millenary Andean pass was traveled and inhabited by generations of natives who forged the Andean culture with astrological and agricultural knowledge, exchange of products, animals and wisdom among peoples—traditions alive to this day. Connecting the Pacific Ocean with the continental territories of Argentina.",
+      "para2": "Under the imposing figure of Cerro Campanario at 4,000 meters high, the territory of Paso Pehuenche has endless ski touring opportunities with an average of 3 meters of accumulated snow during a normal winter."
+    },
+    "andeanCorridor": {
+      "title": "Andean Corridor",
+      "para1": "Aconcagua, that mountain we don't know if it belongs to Heaven or Earth, great guardian of the Andes, dominates space and attention throughout the years. The Incas inhabited its domains and we will also do so by skiing at its feet or contemplating its majesty from neighboring mountains. Have you ever imagined skiing at more than 4,000 meters high? This is your opportunity."
+    }
+  },
+  "contact": {
+    "title": "Get In Touch",
+    "subtitle": "Ready to plan your Andean ski adventure? Contact us today and we'll help you create the perfect trip.",
+    "email": "Email",
+    "phone": "Phone",
+    "location": "Location",
+    "locationValue": "Mendoza, Argentina",
+    "form": {
+      "name": "Name",
+      "email": "Email",
+      "phone": "Phone",
+      "message": "Message",
+      "submit": "Send Message",
+      "success": "Thank you for your message! We will get back to you soon.",
+      "error": "Failed to send message. Please try again or email us directly.",
+      "errorGeneric": "An error occurred. Please try again later."
+    },
+    "followUs": "Follow us on"
+  }
+}

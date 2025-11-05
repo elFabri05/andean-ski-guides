@@ -21,6 +21,7 @@ import {
 } from '@mui/material';
 import MenuIcon from '@mui/icons-material/Menu';
 import LanguageSelector from './LanguageSelector';
+import { useTranslation } from 'react-i18next';
 
 interface HeroSectionProps {
   onTabChange: (tab: number) => void;
@@ -28,6 +29,7 @@ interface HeroSectionProps {
 }
 
 const HeroSection: React.FC<HeroSectionProps> = ({ onTabChange, currentTab }) => {
+  const { t } = useTranslation();
   const [drawerOpen, setDrawerOpen] = useState(false);
   const theme = useTheme();
   const isMobile = useMediaQuery(theme.breakpoints.down('md'));
@@ -45,12 +47,12 @@ const HeroSection: React.FC<HeroSectionProps> = ({ onTabChange, currentTab }) =>
     setDrawerOpen(false);
   };
 
-  const menuItems = ['Home', 'Trip Description', 'Contact'];
+  const menuItems = [t('nav.home'), t('nav.tripDescription'), t('nav.contact')];
 
   return (
     <Box sx={{ flexGrow: 1 }}>
       <AppBar position="static" sx={{ backgroundColor: 'primary.main' }}>
-        <Toolbar sx={{ px: { xs: 1, sm: 2 }, minHeight: { xs: 70, sm: 80, md: 90 } }}>
+        <Toolbar sx={{ px: { xs: 1, sm: 2 }, minHeight: { xs: 60, sm: 60, md: 70 } }}>
           {/* Logo Placeholder */}
           <Box
             sx={{
@@ -63,14 +65,6 @@ const HeroSection: React.FC<HeroSectionProps> = ({ onTabChange, currentTab }) =>
               justifyContent: 'center',
             }}
           >
-            <Image
-              src="/logo.png"
-              alt="Andean Ski Guides Logo"
-              width={70}
-              height={70}
-              style={{ objectFit: 'contain' }}
-              priority
-            />
           </Box>
 
           {/* Desktop Navigation Tabs */}
@@ -130,10 +124,12 @@ const HeroSection: React.FC<HeroSectionProps> = ({ onTabChange, currentTab }) =>
           '& .MuiDrawer-paper': {
             width: 240,
             backgroundColor: 'background.paper',
+            height: 'auto',
+            maxHeight: '100%',
           },
         }}
       >
-        <List>
+        <List sx={{ pt: 0, pb: 0 }}>
           {menuItems.map((text, index) => (
             <ListItem key={text} disablePadding>
               <ListItemButton
@@ -153,7 +149,7 @@ const HeroSection: React.FC<HeroSectionProps> = ({ onTabChange, currentTab }) =>
             </ListItem>
           ))}
           {/* Language Selector in Drawer */}
-          <ListItem sx={{ pt: 2, borderTop: '1px solid', borderColor: 'divider' }}>
+          <ListItem sx={{ pt: 2, pb: 2, borderTop: '1px solid', borderColor: 'divider' }}>
             <Box sx={{ width: '100%', px: 2 }}>
               <LanguageSelector variant="drawer" />
             </Box>
@@ -178,8 +174,10 @@ const HeroSection: React.FC<HeroSectionProps> = ({ onTabChange, currentTab }) =>
             <Box
               sx={{
                 display: 'flex',
+                flexDirection: { xs: 'column-reverse', md: 'row' },
                 alignItems: 'center',
-                justifyContent: 'flex-start',
+                justifyContent: { xs: 'center', md: 'flex-start' },
+                gap: { xs: 0, md: 0 },
               }}
             >
               {/* Logo */}
@@ -187,10 +185,11 @@ const HeroSection: React.FC<HeroSectionProps> = ({ onTabChange, currentTab }) =>
                 sx={{
                   position: 'relative',
                   width: { xs: 200, sm: 280, md: 400 },
-                  height: { xs: 133, sm: 187, md: 267 },
+                  height: { xs: 187, sm: 287, md: 287 },
                   flexShrink: 0,
                   paddingLeft: 0,
-                  marginLeft: 0,
+                  margin: 0,
+                  padding: 0,
                 }}
               >
                 <Image
@@ -203,28 +202,32 @@ const HeroSection: React.FC<HeroSectionProps> = ({ onTabChange, currentTab }) =>
               </Box>
 
               {/* Text Content */}
-              <Box sx={{ textAlign: 'left' }}>
+              <Box sx={{ textAlign: { xs: 'center', md: 'left' }, pt: { xs: 3, md: 0 } }}>
                 <Typography
                   variant="h1"
                   component="h1"
+                  textAlign="center"
                   gutterBottom
                   sx={{
                     fontSize: { xs: '1.85rem', sm: '2.25rem', md: '2.75rem' },
                     fontWeight: { xs: 600, md: 700 },
                   }}
                 >
-                  Andean Ski Guides
+                  {t('hero.title')}
                 </Typography>
                 <Typography
-                  variant="h5"
-                  component="p"
+                  variant="body1"
+                  textAlign="center"
                   sx={{
-                    mt: 1.5,
-                    opacity: 0.9,
-                    fontSize: { xs: '1rem', sm: '1.15rem', md: '1.35rem' },
+                    mb: { xs: 4, sm: 5, md: 6 },
+                    maxWidth: 800,
+                    mx: 'auto',
+                    fontSize: { xs: '0.95rem', md: '1rem' },
+                    px: { xs: 2, sm: 0 },
+                    fontStyle: 'italic',
                   }}
                 >
-                  Experience the thrill of skiing in the majestic Andes Mountains
+                  {t('hero.subtitle')}
                 </Typography>
               </Box>
             </Box>

@@ -1,0 +1,55 @@
+{
+  "nav": {
+    "home": "Startseite",
+    "tripDescription": "Reisebeschreibung",
+    "contact": "Kontakt"
+  },
+  "hero": {
+    "title": "Andean Ski Guides",
+    "subtitle": "Entdecke deine Essenz in der Magie der Anden, wo die ungezähmte Natur unter einem Meer von Sternen herrscht und die uralten Wächter als Kondore gekleidet fliegen."
+  },
+  "tripDescription": {
+    "experienceTitle": "Erlebe die Magie der Anden",
+    "experiencePara1": "Ob auf Skiern oder Snowboards, wir laden dich ein, unsere schneebedeckten Berge zu erkunden, wobei wir stets die Sicherheit im Lawinengelände und das Vergnügen jedes Teilnehmers an unseren Abenteuern priorisieren.",
+    "experiencePara2": "Durch ständiges Training möchten wir dir Selbstvertrauen und Freude vermitteln, damit du eine unvergessliche \"Andean Ski Trip\" erleben kannst.",
+    "cuyoTitle": "Erkunde die Cuyo-Region",
+    "cuyoPara1": "Wir reisen durch die Cuyo-Region, ein Skigebiet, umgeben von kolossalen Bergen wie dem Aconcagua.",
+    "cuyoPara2": "Die unterschiedlichen Schneedecken, Ausrichtungen und eine durchschnittliche Höhe von 3500 Metern über dem Meeresspiegel bieten Pulverschneebedingungen, die tagelang anhalten.",
+    "cuyoPara3": "Genieße die Kultur der Anden auf einer Skireise.",
+    "destinationsTitle": "Unsere Ziele",
+    "lasLenas": {
+      "title": "Las Leñas",
+      "para1": "Im Herzen der Anden gelegen, repräsentiert dieses 1983 gegründete Skigebiet derzeit eines der wichtigsten Skigebiete Südamerikas. Mit seiner maximalen Höhe von 3.400 Metern über dem Meeresspiegel und 27 km Pisten.",
+      "para2": "Die große Attraktion dieses Ortes ist seine landschaftliche Schönheit, die Andenfarben und vor allem sein \"einfacher\" Zugang zu Off-Piste-Gelände. Mit endlosen Varianten in Bezug auf Hänge, Korridore und Gelände, um Spaß zu haben und die Qualität des Andenschnees zu genießen!",
+      "para3": "Die Fahrt von der Stadt Mendoza (340 km) zum Skigebiet ist eine Straße, die Dörfer, verlassene Orte und inspirierende Landschaften am Fuße der Bergkette durchquert, bis sie in ihre Domänen eindringt."
+    },
+    "pasoPehuenche": {
+      "title": "Paso Pehuenche",
+      "para1": "Die Legende besagt, dass dieser tausendjährige Andenpass von Generationen von Einheimischen bereist und bewohnt wurde, die die Andenkultur mit astrologischem und landwirtschaftlichem Wissen, Austausch von Produkten, Tieren und Weisheit zwischen den Völkern schmiedeten – Traditionen, die bis heute lebendig sind. Er verbindet den Pazifischen Ozean mit den kontinentalen Territorien Argentiniens.",
+      "para2": "Unter der imposanten Gestalt des Cerro Campanario auf 4.000 Metern Höhe bietet das Gebiet des Paso Pehuenche endlose Skitourenmöglichkeiten mit durchschnittlich 3 Metern angesammeltem Schnee während eines normalen Winters."
+    },
+    "andeanCorridor": {
+      "title": "Anden-Korridor",
+      "para1": "Aconcagua, dieser Berg, von dem wir nicht wissen, ob er zum Himmel oder zur Erde gehört, großer Wächter der Anden, dominiert seit Jahren Raum und Aufmerksamkeit. Die Inkas bewohnten seine Domänen und wir werden es auch tun, indem wir zu seinen Füßen Ski fahren oder seine Majestät von benachbarten Bergen betrachten. Hast du dir jemals vorgestellt, auf über 4.000 Metern Höhe Ski zu fahren? Dies ist deine Gelegenheit."
+    }
+  },
+  "contact": {
+    "title": "Kontaktieren Sie uns",
+    "subtitle": "Bereit, dein Anden-Skiabenteuer zu planen? Kontaktiere uns noch heute und wir helfen dir, die perfekte Reise zu gestalten.",
+    "email": "E-Mail",
+    "phone": "Telefon",
+    "location": "Standort",
+    "locationValue": "Mendoza, Argentinien",
+    "form": {
+      "name": "Name",
+      "email": "E-Mail",
+      "phone": "Telefon",
+      "message": "Nachricht",
+      "submit": "Nachricht senden",
+      "success": "Vielen Dank für deine Nachricht! Wir werden uns bald bei dir melden.",
+      "error": "Nachricht konnte nicht gesendet werden. Bitte versuche es erneut oder sende uns direkt eine E-Mail.",
+      "errorGeneric": "Ein Fehler ist aufgetreten. Bitte versuche es später erneut."
+    },
+    "followUs": "Folge uns auf"
+  }
+}

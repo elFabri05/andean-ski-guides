@@ -2,6 +2,24 @@ This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-
 
 ## Getting Started
 
+### Environment Setup
+
+1. Copy the `.env.example` file to `.env.local`:
+```bash
+cp .env.example .env.local
+```
+
+2. Add your API keys to `.env.local`:
+   - **Google Maps API Key**: Get it from [Google Cloud Console](https://console.cloud.google.com/google/maps-apis)
+   - **Resend API Key**: Sign up at [resend.com](https://resend.com) and get your key from [API Keys](https://resend.com/api-keys)
+     - Free tier includes: 100 emails/day, 3,000 emails/month
+
+3. Update the email settings in `app/api/contact/route.ts`:
+   - Replace `onboarding@resend.dev` with your verified domain email
+   - Verify your domain in [Resend Dashboard](https://resend.com/domains) for production use
+
+### Run Development Server
+
 First, run the development server:
 
 ```bash

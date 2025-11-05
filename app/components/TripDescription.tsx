@@ -13,88 +13,100 @@ import AcUnitIcon from '@mui/icons-material/AcUnit';
 import GroupsIcon from '@mui/icons-material/Groups';
 import CalendarMonthIcon from '@mui/icons-material/CalendarMonth';
 import DestinationMap from './DestinationMap';
+import { useTranslation } from 'react-i18next';
 
 const TripDescription: React.FC = () => {
-  
+  const { t } = useTranslation();
 
   return (
-    <Box sx={{ py: { xs: 4, sm: 6, md: 8 }, backgroundColor: 'background.default', px: { xs: 2, sm: 3 } }}>
-      <Container maxWidth="lg">
-        <Typography
-          variant="h2"
-          component="h2"
-          textAlign="center"
-          gutterBottom
-          sx={{
-            fontSize: { xs: '1.75rem', sm: '2rem', md: '2.5rem' },
-            color: '#D2691E',
-          }}
-        >
-          Andean Ski Guides: Experience the Magic of the Andes
-        </Typography>
-        <Typography
-          variant="body1"
-          textAlign="center"
-          sx={{
-            mb: { xs: 4, sm: 5, md: 6 },
-            color: '#CD853F',
-            maxWidth: 800,
-            mx: 'auto',
-            fontSize: { xs: '0.95rem', md: '1rem' },
-            px: { xs: 2, sm: 0 },
-            fontStyle: 'italic',
-          }}
-        >
-          Discover your essence in the magic of the Andes, where untamed nature reigns beneath a sea of stars and the ancestral guardians fly dressed as condors.
-        </Typography>
+    <Box sx={{ py: { xs: 5.75, sm: 6.75, md: 7.75 }, backgroundColor: 'background.default', px: { xs: 2, sm: 3 } }}>
+      <Container maxWidth="md">
+        <Box sx={{ textAlign: 'center' }}>
+          <Typography
+            variant="h4"
+            component="h2"
+            gutterBottom
+            sx={{
+              fontSize: { xs: '1.5rem', sm: '1.75rem', md: '2rem' },
+              fontWeight: { xs: 600, md: 700 },
+              color: '#D2691E',
+              mb: 3,
+            }}
+          >
+            {t('tripDescription.experienceTitle')}
+          </Typography>
+          <Typography
+            variant="body1"
+            paragraph
+            sx={{
+              fontSize: { xs: '0.95rem', md: '1rem' },
+              maxWidth: 800,
+              mx: 'auto',
+              mb: 2,
+            }}
+          >
+            {t('tripDescription.experiencePara1')}
+          </Typography>
+          <Typography
+            variant="body1"
+            paragraph
+            sx={{
+              fontSize: { xs: '0.95rem', md: '1rem' },
+              maxWidth: 800,
+              mx: 'auto',
+              mb: { xs: 4, sm: 5, md: 6 },
+            }}
+          >
+            {t('tripDescription.experiencePara2')}
+          </Typography>
 
-        <Box sx={{ mt: { xs: 4, sm: 5, md: 6 }, px: { xs: 1, sm: 0 } }}>
-          <Typography
-            variant="body1"
-            paragraph
-            sx={{ fontSize: { xs: '0.95rem', md: '1rem' } }}
-          >
-            Whether on skis or snowboards, we invite you to explore our snow-covered mountains, always prioritizing safety in avalanche terrain and the enjoyment of every participant on our adventures.
-          </Typography>
-          <Typography
-            variant="body1"
-            paragraph
-            sx={{ fontSize: { xs: '0.95rem', md: '1rem' } }}
-          >
-            Through constant training, we aim to provide you with confidence and joy so you can experience an unforgettable "Andean Ski Trip."
-          </Typography>
           <Typography
             variant="h4"
             component="h3"
             gutterBottom
             sx={{
               fontSize: { xs: '1.5rem', sm: '1.75rem', md: '2rem' },
-              mt: 3,
+              fontWeight: { xs: 600, md: 700 },
               color: '#D2691E',
+              mb: 3,
             }}
           >
-            Explore the Cuyo Region
+            {t('tripDescription.cuyoTitle')}
           </Typography>
           <Typography
             variant="body1"
             paragraph
-            sx={{ fontSize: { xs: '0.95rem', md: '1rem' } }}
+            sx={{
+              fontSize: { xs: '0.95rem', md: '1rem' },
+              maxWidth: 800,
+              mx: 'auto',
+              mb: 2,
+            }}
           >
-            We'll journey through the Cuyo Region, a ski area surrounded by colossal mountains like Aconcagua.
+            {t('tripDescription.cuyoPara1')}
           </Typography>
           <Typography
             variant="body1"
             paragraph
-            sx={{ fontSize: { xs: '0.95rem', md: '1rem' } }}
+            sx={{
+              fontSize: { xs: '0.95rem', md: '1rem' },
+              maxWidth: 800,
+              mx: 'auto',
+              mb: 2,
+            }}
           >
-            The varied snowpacks, orientations, and an average altitude of 3500 meters above sea level offer powder snow conditions that last for days.
+            {t('tripDescription.cuyoPara2')}
           </Typography>
           <Typography
             variant="body1"
             paragraph
-            sx={{ fontSize: { xs: '0.95rem', md: '1rem' } }}
+            sx={{
+              fontSize: { xs: '0.95rem', md: '1rem' },
+              maxWidth: 800,
+              mx: 'auto',
+            }}
           >
-            Enjoy the culture of the Andes through a ski trip.
+            {t('tripDescription.cuyoPara3')}
           </Typography>
 
           {/* Destinations Map */}
@@ -105,14 +117,122 @@ const TripDescription: React.FC = () => {
               gutterBottom
               sx={{
                 fontSize: { xs: '1.5rem', sm: '1.75rem', md: '2rem' },
-                mb: 3,
+                fontWeight: { xs: 600, md: 700 },
                 color: '#D2691E',
-                textAlign: 'center',
+                mb: 3,
               }}
             >
-              Our Destinations
+              {t('tripDescription.destinationsTitle')}
             </Typography>
             <DestinationMap />
+          </Box>
+
+          {/* Destination Descriptions */}
+          <Box sx={{ mt: { xs: 4, sm: 5, md: 6 }, textAlign: 'left' }}>
+            {/* Las Leñas */}
+            <Box sx={{ mb: { xs: 4, md: 5 } }}>
+              <Typography
+                variant="h5"
+                component="h4"
+                gutterBottom
+                sx={{
+                  fontSize: { xs: '1.25rem', sm: '1.4rem', md: '1.5rem' },
+                  fontWeight: { xs: 600, md: 700 },
+                  color: '#D2691E',
+                  mb: 2,
+                }}
+              >
+                {t('tripDescription.lasLenas.title')}
+              </Typography>
+              <Typography
+                variant="body1"
+                paragraph
+                sx={{
+                  fontSize: { xs: '0.95rem', md: '1rem' },
+                  mb: 2,
+                }}
+              >
+                {t('tripDescription.lasLenas.para1')}
+              </Typography>
+              <Typography
+                variant="body1"
+                paragraph
+                sx={{
+                  fontSize: { xs: '0.95rem', md: '1rem' },
+                  mb: 2,
+                }}
+              >
+                {t('tripDescription.lasLenas.para2')}
+              </Typography>
+              <Typography
+                variant="body1"
+                sx={{
+                  fontSize: { xs: '0.95rem', md: '1rem' },
+                }}
+              >
+                {t('tripDescription.lasLenas.para3')}
+              </Typography>
+            </Box>
+
+            {/* Paso Pehuenche */}
+            <Box sx={{ mb: { xs: 4, md: 5 } }}>
+              <Typography
+                variant="h5"
+                component="h4"
+                gutterBottom
+                sx={{
+                  fontSize: { xs: '1.25rem', sm: '1.4rem', md: '1.5rem' },
+                  fontWeight: { xs: 600, md: 700 },
+                  color: '#D2691E',
+                  mb: 2,
+                }}
+              >
+                {t('tripDescription.pasoPehuenche.title')}
+              </Typography>
+              <Typography
+                variant="body1"
+                paragraph
+                sx={{
+                  fontSize: { xs: '0.95rem', md: '1rem' },
+                  mb: 2,
+                }}
+              >
+                {t('tripDescription.pasoPehuenche.para1')}
+              </Typography>
+              <Typography
+                variant="body1"
+                sx={{
+                  fontSize: { xs: '0.95rem', md: '1rem' },
+                }}
+              >
+                {t('tripDescription.pasoPehuenche.para2')}
+              </Typography>
+            </Box>
+
+            {/* Andean Corridor */}
+            <Box>
+              <Typography
+                variant="h5"
+                component="h4"
+                gutterBottom
+                sx={{
+                  fontSize: { xs: '1.25rem', sm: '1.4rem', md: '1.5rem' },
+                  fontWeight: { xs: 600, md: 700 },
+                  color: '#D2691E',
+                  mb: 2,
+                }}
+              >
+                {t('tripDescription.andeanCorridor.title')}
+              </Typography>
+              <Typography
+                variant="body1"
+                sx={{
+                  fontSize: { xs: '0.95rem', md: '1rem' },
+                }}
+              >
+                {t('tripDescription.andeanCorridor.para1')}
+              </Typography>
+            </Box>
           </Box>
         </Box>
       </Container>

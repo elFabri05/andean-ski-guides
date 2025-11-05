@@ -1,0 +1,55 @@
+{
+  "nav": {
+    "home": "Inicio",
+    "tripDescription": "Descripción del Viaje",
+    "contact": "Contacto"
+  },
+  "hero": {
+    "title": "Andean Ski Guides",
+    "subtitle": "Descubre tu esencia en la magia de los Andes, donde la naturaleza indómita reina bajo un mar de estrellas y los guardianes ancestrales vuelan vestidos de cóndores."
+  },
+  "tripDescription": {
+    "experienceTitle": "Experimenta la Magia de los Andes",
+    "experiencePara1": "Ya sea en esquís o snowboard, te invitamos a explorar nuestras montañas nevadas, priorizando siempre la seguridad en terreno de avalanchas y el disfrute de cada participante en nuestras aventuras.",
+    "experiencePara2": "A través del entrenamiento constante, nuestro objetivo es brindarte confianza y alegría para que puedas experimentar un inolvidable \"Andean Ski Trip\".",
+    "cuyoTitle": "Explora la Región de Cuyo",
+    "cuyoPara1": "Viajaremos por la Región de Cuyo, una zona de esquí rodeada de montañas colosales como el Aconcagua.",
+    "cuyoPara2": "Los variados paquetes de nieve, orientaciones y una altitud promedio de 3500 metros sobre el nivel del mar ofrecen condiciones de nieve polvo que duran días.",
+    "cuyoPara3": "Disfruta de la cultura de los Andes a través de un viaje de esquí.",
+    "destinationsTitle": "Nuestros Destinos",
+    "lasLenas": {
+      "title": "Las Leñas",
+      "para1": "Ubicado en el corazón de Los Andes, este centro de esquí fundado en el año 1983 representa actualmente uno de los centros de esquí más importantes de Sudamérica. Con su altura máxima de 3400 mts sobre el nivel del mar y 27 km de pistas.",
+      "para2": "El gran atractivo de este lugar es su belleza escénica, colores andinos y sobre todo su \"fácil\" acceso a terrenos de fuera de pista. Con inagotables variantes en cuanto a pendientes, corredores, terreno para divertirse y gozar la calidad de la nieve Andina!",
+      "para3": "El viaje desde la ciudad de Mendoza (340km) hasta el centro de esquí, es un camino que atraviesa pueblos, lugares desolados, paisajes inspiradores al pie de la cordillera hasta adentrarse en sus dominios."
+    },
+    "pasoPehuenche": {
+      "title": "Paso Pehuenche",
+      "para1": "Cuenta la leyenda de este milenario paso Andino fue transitado y habitado por generaciones de nativos que forjaron la cultura andina con conocimientos astrológicos, agrícolas, de intercambio de productos, animales y sabiduría entre los pueblos, tradiciones vivas hasta el día de hoy. Conectando el Océano Pacífico con los territorios continentales de Argentina.",
+      "para2": "Bajo la imponente figura del Cerro Campanario de 4000 metros de altura, el territorio del Paso Pehuenche tiene inagotables oportunidades de esquí de travesía con un promedio de 3 metros de nieve acumulada durante un normal invierno."
+    },
+    "andeanCorridor": {
+      "title": "Corredor Andino",
+      "para1": "El Aconcagua, esa montaña que no sabemos si pertenece al Cielo o a la Tierra, gran guardián de los Andes, domina el espacio y la atención durante los años. Los Incas habitaron sus dominios y nosotros también lo haremos esquiando a sus pies o contemplando su majestuosidad desde montañas vecinas. ¿Alguna vez imaginaste esquiar a más de 4000 metros de altura? Esta es tu oportunidad."
+    }
+  },
+  "contact": {
+    "title": "Contáctanos",
+    "subtitle": "¿Listo para planear tu aventura de esquí en los Andes? Contáctanos hoy y te ayudaremos a crear el viaje perfecto.",
+    "email": "Correo Electrónico",
+    "phone": "Teléfono",
+    "location": "Ubicación",
+    "locationValue": "Mendoza, Argentina",
+    "form": {
+      "name": "Nombre",
+      "email": "Correo Electrónico",
+      "phone": "Teléfono",
+      "message": "Mensaje",
+      "submit": "Enviar Mensaje",
+      "success": "¡Gracias por tu mensaje! Te responderemos pronto.",
+      "error": "No se pudo enviar el mensaje. Por favor intenta nuevamente o envíanos un correo directamente.",
+      "errorGeneric": "Ocurrió un error. Por favor intenta más tarde."
+    },
+    "followUs": "Síguenos en"
+  }
+}

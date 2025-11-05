@@ -2,7 +2,7 @@
 
 import React from 'react';
 import { Box, Typography, Alert } from '@mui/material';
-import { APIProvider, Map, AdvancedMarker, InfoWindow } from '@vis.gl/react-google-maps';
+import { APIProvider, Map, AdvancedMarker, InfoWindow, Pin } from '@vis.gl/react-google-maps';
 
 interface Destination {
   name: string;
@@ -19,16 +19,16 @@ const destinations: Destination[] = [
     description: 'Premier ski resort with excellent powder snow and varied terrain'
   },
   {
-    name: 'Paso los Pehuenches',
+    name: 'Paso Pehuenche',
     lat: -35.9833,
     lng: -70.4000,
-    description: 'Scenic mountain pass connecting Argentina and Chile through the Andes'
+    description: 'Millenary Andean pass with endless ski touring opportunities'
   },
   {
-    name: 'Puente del Inca',
+    name: 'Andean Corridor',
     lat: -32.8258,
     lng: -69.9092,
-    description: 'Natural bridge formation with stunning thermal springs and historical ruins'
+    description: 'Ski at the feet of Aconcagua, the guardian of the Andes, at over 4,000 meters high'
   }
 ];
 
@@ -83,7 +83,29 @@ const DestinationMap: React.FC = () => {
               <AdvancedMarker
                 position={{ lat: destination.lat, lng: destination.lng }}
                 onClick={() => setSelectedMarker(destination.name)}
-              />
+              >
+                <div style={{ position: 'relative', textAlign: 'center' }}>
+                  <Pin />
+                  <div
+                    style={{
+                      position: 'absolute',
+                      top: '-30px',
+                      left: '50%',
+                      transform: 'translateX(-50%)',
+                      backgroundColor: 'white',
+                      padding: '4px 8px',
+                      borderRadius: '4px',
+                      boxShadow: '0 2px 4px rgba(0,0,0,0.2)',
+                      whiteSpace: 'nowrap',
+                      fontSize: '12px',
+                      fontWeight: 'bold',
+                      color: '#333',
+                    }}
+                  >
+                    {destination.name}
+                  </div>
+                </div>
+              </AdvancedMarker>
               {selectedMarker === destination.name && (
                 <InfoWindow
                   position={{ lat: destination.lat, lng: destination.lng }}

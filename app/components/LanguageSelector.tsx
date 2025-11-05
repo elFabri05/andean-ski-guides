@@ -1,6 +1,6 @@
 'use client';
 
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import {
   Select,
   MenuItem,
@@ -9,16 +9,24 @@ import {
   Box,
 } from '@mui/material';
 import LanguageIcon from '@mui/icons-material/Language';
+import { useTranslation } from 'react-i18next';
 
 interface LanguageSelectorProps {
   variant?: 'toolbar' | 'drawer';
 }
 
 const LanguageSelector: React.FC<LanguageSelectorProps> = ({ variant = 'toolbar' }) => {
-  const [language, setLanguage] = useState('en');
+  const { i18n } = useTranslation();
+  const [language, setLanguage] = useState(i18n.language || 'en');
+
+  useEffect(() => {
+    setLanguage(i18n.language);
+  }, [i18n.language]);
 
   const handleChange = (event: SelectChangeEvent) => {
-    setLanguage(event.target.value);
+    const newLang = event.target.value;
+    setLanguage(newLang);
+    i18n.changeLanguage(newLang);
   };
 
   const isToolbar = variant === 'toolbar';
