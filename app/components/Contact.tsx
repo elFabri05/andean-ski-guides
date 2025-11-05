@@ -38,7 +38,7 @@ const Contact: React.FC = () => {
     {
       icon: <EmailIcon sx={{ fontSize: { xs: 35, md: 40 } }} />,
       title: 'Email',
-      content: 'info@andeanskiguides.com',
+      content: 'andeanskiguides@gmail.com',
     },
     {
       icon: <PhoneIcon sx={{ fontSize: { xs: 35, md: 40 } }} />,

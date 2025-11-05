@@ -12,6 +12,7 @@ import TerrainIcon from '@mui/icons-material/Terrain';
 import AcUnitIcon from '@mui/icons-material/AcUnit';
 import GroupsIcon from '@mui/icons-material/Groups';
 import CalendarMonthIcon from '@mui/icons-material/CalendarMonth';
+import DestinationMap from './DestinationMap';
 
 const TripDescription: React.FC = () => {
   
@@ -95,6 +96,24 @@ const TripDescription: React.FC = () => {
           >
             Enjoy the culture of the Andes through a ski trip.
           </Typography>
+
+          {/* Destinations Map */}
+          <Box sx={{ mt: { xs: 4, sm: 5, md: 6 } }}>
+            <Typography
+              variant="h4"
+              component="h3"
+              gutterBottom
+              sx={{
+                fontSize: { xs: '1.5rem', sm: '1.75rem', md: '2rem' },
+                mb: 3,
+                color: '#D2691E',
+                textAlign: 'center',
+              }}
+            >
+              Our Destinations
+            </Typography>
+            <DestinationMap />
+          </Box>
         </Box>
       </Container>
     </Box>

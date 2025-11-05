@@ -50,13 +50,13 @@ const HeroSection: React.FC<HeroSectionProps> = ({ onTabChange, currentTab }) =>
   return (
     <Box sx={{ flexGrow: 1 }}>
       <AppBar position="static" sx={{ backgroundColor: 'primary.main' }}>
-        <Toolbar sx={{ px: { xs: 1, sm: 2 } }}>
+        <Toolbar sx={{ px: { xs: 1, sm: 2 }, minHeight: { xs: 70, sm: 80, md: 90 } }}>
           {/* Logo Placeholder */}
           <Box
             sx={{
               position: 'relative',
-              width: { xs: 40, sm: 50, md: 60 },
-              height: { xs: 40, sm: 50, md: 60 },
+              width: { xs: 50, sm: 60, md: 70 },
+              height: { xs: 50, sm: 60, md: 70 },
               mr: 2,
               display: 'flex',
               alignItems: 'center',
@@ -66,8 +66,8 @@ const HeroSection: React.FC<HeroSectionProps> = ({ onTabChange, currentTab }) =>
             <Image
               src="/logo.png"
               alt="Andean Ski Guides Logo"
-              width={60}
-              height={60}
+              width={70}
+              height={70}
               style={{ objectFit: 'contain' }}
               priority
             />
@@ -195,7 +195,7 @@ const HeroSection: React.FC<HeroSectionProps> = ({ onTabChange, currentTab }) =>
               >
                 <Image
                   src="/logo2.png"
-                  alt="Andean Ski Guides Logo"
+                  alt="Andean Ski Guides Logo 2"
                   fill
                   style={{ objectFit: 'contain' }}
                   priority
