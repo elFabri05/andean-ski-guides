@@ -1,0 +1,8 @@
+# robots.txt for Andean Ski Guides
+# Allow all search engines to crawl the site
+
+User-agent: *
+Allow: /
+
+# Sitemap location
+Sitemap: https://andeanskiguides.com/sitemap.xml
