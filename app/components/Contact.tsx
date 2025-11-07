@@ -13,7 +13,6 @@ import {
 } from '@mui/material';
 import EmailIcon from '@mui/icons-material/Email';
 import PhoneIcon from '@mui/icons-material/Phone';
-import LocationOnIcon from '@mui/icons-material/LocationOn';
 import InstagramIcon from '@mui/icons-material/Instagram';
 import { useTranslation } from 'react-i18next';
 
@@ -91,11 +90,6 @@ const Contact: React.FC = () => {
       title: t('contact.phone'),
       content: '+43670550353',
     },
-    {
-      icon: <LocationOnIcon sx={{ fontSize: { xs: 35, md: 40 } }} />,
-      title: t('contact.location'),
-      content: t('contact.locationValue'),
-    },
   ];
 
   return (
@@ -134,7 +128,7 @@ const Contact: React.FC = () => {
             display: 'grid',
             gridTemplateColumns: {
               xs: '1fr',
-              md: '1fr 2fr',
+              md: 'auto 1fr',
             },
             gap: { xs: 2, sm: 3, md: 4 },
           }}
@@ -145,10 +139,11 @@ const Contact: React.FC = () => {
               display: 'grid',
               gridTemplateColumns: {
                 xs: '1fr',
-                sm: 'repeat(3, 1fr)',
+                sm: 'repeat(2, 1fr)',
                 md: '1fr',
               },
               gap: { xs: 2, md: 3 },
+              width: { md: 'fit-content' },
             }}
           >
             {contactInfo.map((info, index) => (

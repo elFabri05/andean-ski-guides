@@ -17,7 +17,7 @@ export async function POST(request: Request) {
 
     // Send email using Resend
     const data = await resend.emails.send({
-      from: 'Andean Ski Guides <contact@andeanskiguides.com>', // Update this with your verified domain
+      from: 'Andean Ski Guides <onboarding@resend.dev>', // Update this with your verified domain
       to: ['andeanskiguides@gmail.com'], // Your business email
       replyTo: email, // Customer's email for easy replies
       subject: `New Contact Form Submission from ${name}`,

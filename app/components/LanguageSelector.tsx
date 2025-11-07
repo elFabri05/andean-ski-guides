@@ -17,10 +17,12 @@ interface LanguageSelectorProps {
 
 const LanguageSelector: React.FC<LanguageSelectorProps> = ({ variant = 'toolbar' }) => {
   const { i18n } = useTranslation();
-  const [language, setLanguage] = useState(i18n.language || 'en');
+  const [language, setLanguage] = useState('en');
+  const [mounted, setMounted] = useState(false);
 
   useEffect(() => {
-    setLanguage(i18n.language);
+    setMounted(true);
+    setLanguage(i18n.language || 'en');
   }, [i18n.language]);
 
   const handleChange = (event: SelectChangeEvent) => {
@@ -31,10 +33,13 @@ const LanguageSelector: React.FC<LanguageSelectorProps> = ({ variant = 'toolbar'
 
   const isToolbar = variant === 'toolbar';
 
+  // Prevent hydration mismatch by using consistent initial value
+  const displayLanguage = mounted ? language : 'en';
+
   return (
     <FormControl size="small" fullWidth={!isToolbar}>
       <Select
-        value={language}
+        value={displayLanguage}
         onChange={handleChange}
         sx={{
           color: isToolbar ? 'white' : 'text.primary',
