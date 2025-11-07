@@ -136,14 +136,10 @@ const Contact: React.FC = () => {
           {/* Contact Information */}
           <Box
             sx={{
-              display: 'grid',
-              gridTemplateColumns: {
-                xs: '1fr',
-                sm: 'repeat(2, 1fr)',
-                md: '1fr',
-              },
+              display: 'flex',
+              flexDirection: { xs: 'column', sm: 'row', md: 'column' },
               gap: { xs: 2, md: 3 },
-              width: { md: 'fit-content' },
+              justifyContent: { xs: 'center', md: 'flex-start' },
             }}
           >
             {contactInfo.map((info, index) => (
@@ -151,11 +147,16 @@ const Contact: React.FC = () => {
                 key={index}
                 sx={{
                   p: { xs: 2.5, md: 3 },
-                  textAlign: 'center',
                   backgroundColor: 'background.default',
+                  display: 'flex',
+                  flexDirection: 'column',
+                  alignItems: 'center',
+                  justifyContent: 'center',
+                  minHeight: { xs: '120px', md: '140px' },
+                  flex: { sm: 1, md: 'none' },
                 }}
               >
-                <Box sx={{ color: 'primary.main', mb: 1 }}>
+                <Box sx={{ color: 'primary.main', mb: 1.5 }}>
                   {info.icon}
                 </Box>
                 <Typography
