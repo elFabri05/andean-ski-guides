@@ -1,5 +1,6 @@
 import { Resend } from 'resend';
 import { NextResponse } from 'next/server';
+import escapeHtml from 'escape-html';
 
 const resend = new Resend(process.env.RESEND_API_KEY);
 
@@ -15,19 +16,25 @@ export async function POST(request: Request) {
       );
     }
 
+    // Sanitize user inputs to prevent XSS attacks
+    const sanitizedName = escapeHtml(name);
+    const sanitizedEmail = escapeHtml(email);
+    const sanitizedPhone = phone ? escapeHtml(phone) : 'Not provided';
+    const sanitizedMessage = escapeHtml(message);
+
     // Send email using Resend
     const data = await resend.emails.send({
       from: 'Andean Ski Guides <onboarding@resend.dev>', // Update this with your verified domain
       to: ['andeanskiguides@gmail.com'], // Your business email
       replyTo: email, // Customer's email for easy replies
-      subject: `New Contact Form Submission from ${name}`,
+      subject: `New Contact Form Submission from ${sanitizedName}`,
       html: `
         <h2>New Contact Form Submission</h2>
-        <p><strong>Name:</strong> ${name}</p>
-        <p><strong>Email:</strong> ${email}</p>
-        <p><strong>Phone:</strong> ${phone || 'Not provided'}</p>
+        <p><strong>Name:</strong> ${sanitizedName}</p>
+        <p><strong>Email:</strong> ${sanitizedEmail}</p>
+        <p><strong>Phone:</strong> ${sanitizedPhone}</p>
         <p><strong>Message:</strong></p>
-        <p>${message}</p>
+        <p>${sanitizedMessage}</p>
       `,
     });
 
