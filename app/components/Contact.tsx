@@ -64,10 +64,39 @@ const Contact: React.FC = () => {
           message: '',
         });
       } else {
-        setStatus({
-          type: 'error',
-          message: t('contact.form.error'),
-        });
+        // Handle different error types
+        const errorData = await response.json();
+
+        if (response.status === 429) {
+          // Rate limit error - show specific message
+          const retryAfter = errorData.retryAfter;
+          const minutes = Math.ceil(retryAfter / 60);
+          setStatus({
+            type: 'error',
+            message: `${errorData.error || t('contact.form.rateLimitError')} Please try again in ${minutes} minute${minutes > 1 ? 's' : ''}.`,
+          });
+        } else if (response.status === 400 && errorData.messages) {
+          // Validation errors - show first error or all errors
+          const errorMessage = errorData.messages.length > 0
+            ? errorData.messages.join('. ')
+            : errorData.error || t('contact.form.error');
+          setStatus({
+            type: 'error',
+            message: errorMessage,
+          });
+        } else if (response.status === 403) {
+          // CSRF or forbidden error
+          setStatus({
+            type: 'error',
+            message: errorData.error || 'Request forbidden. Please refresh the page and try again.',
+          });
+        } else {
+          // Generic error
+          setStatus({
+            type: 'error',
+            message: errorData.error || t('contact.form.error'),
+          });
+        }
       }
     } catch (error) {
       setStatus({
