@@ -1,11 +1,14 @@
 'use client';
 
 import React from 'react';
+import Link from 'next/link';
 import {
   Container,
   Typography,
   Box,
+  Button,
 } from '@mui/material';
+import ArrowForwardIcon from '@mui/icons-material/ArrowForward';
 import DestinationMap from './DestinationMap';
 import { useTranslation } from 'react-i18next';
 
@@ -227,6 +230,31 @@ const TripDescription: React.FC = () => {
                 {t('tripDescription.andeanCorridor.para1')}
               </Typography>
             </Box>
+          </Box>
+
+          {/* Itinerary Button */}
+          <Box sx={{ textAlign: 'center', mt: { xs: 5, sm: 6, md: 7 } }}>
+            <Button
+              component={Link}
+              href="/itinerary"
+              variant="contained"
+              endIcon={<ArrowForwardIcon />}
+              sx={{
+                backgroundColor: '#D2691E',
+                color: '#fff',
+                fontSize: { xs: '0.95rem', md: '1.1rem' },
+                fontWeight: 600,
+                px: { xs: 3, md: 4 },
+                py: { xs: 1.5, md: 2 },
+                borderRadius: 2,
+                textTransform: 'none',
+                '&:hover': {
+                  backgroundColor: '#B8571A',
+                },
+              }}
+            >
+              {t('tripDescription.itineraryButton')}
+            </Button>
           </Box>
         </Box>
       </Container>

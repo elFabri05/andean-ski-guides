@@ -18,6 +18,7 @@
     "cuyoPara2": "Die unterschiedlichen Schneedecken, Ausrichtungen und eine durchschnittliche Höhe von 3500 Metern über dem Meeresspiegel bieten Pulverschneebedingungen, die tagelang anhalten.",
     "cuyoPara3": "Genieße die Kultur der Anden auf einer Skireise.",
     "destinationsTitle": "Unsere Ziele",
+    "itineraryButton": "Choose your trip Itinerary",
     "lasLenas": {
       "title": "Las Leñas",
       "para1": "Im Herzen der Anden gelegen, repräsentiert dieses 1983 gegründete Skigebiet derzeit eines der wichtigsten Skigebiete Südamerikas. Mit seiner maximalen Höhe von 3.400 Metern über dem Meeresspiegel und 27 km Pisten.",
@@ -32,6 +33,94 @@
     "andeanCorridor": {
       "title": "Anden-Korridor",
       "para1": "Aconcagua, dieser Berg, von dem wir nicht wissen, ob er zum Himmel oder zur Erde gehört, großer Wächter der Anden, dominiert seit Jahren Raum und Aufmerksamkeit. Die Inkas bewohnten seine Domänen und wir werden es auch tun, indem wir zu seinen Füßen Ski fahren oder seine Majestät von benachbarten Bergen betrachten. Hast du dir jemals vorgestellt, auf über 4.000 Metern Höhe Ski zu fahren? Dies ist deine Gelegenheit."
+    }
+  },
+  "itinerary": {
+    "title": "Reiserouten",
+    "pasoPehuenche4Days": {
+      "title": "SKI PASO PEHUENCHE – 4 TAGE",
+      "day1": {
+        "title": "Tag 1",
+        "description": "Reise von Mendoza nach Los Castaños. Erkundung und Studie der Schnee- und Wetterbedingungen."
+      },
+      "day2": {
+        "title": "Tag 2",
+        "description": "Backcountry-Skifahren auf zu bestimmendem Gelände. Rückkehr nach Los Castaños."
+      },
+      "day3": {
+        "title": "Tag 3",
+        "description": "Ganztägiges Backcountry-Skifahren im Valle del Límite mit Skidoo (optional). Rückkehr nach Los Castaños."
+      },
+      "day4": {
+        "title": "Tag 4",
+        "description": "Halbtägiges Backcountry-Skifahren in Los Castaños. Rückkehr nach Mendoza."
+      }
+    },
+    "lasLenasPehuenche8Days": {
+      "title": "LAS LEÑAS – PASO PEHUENCHE – 8 TAGE",
+      "summary": "Zusammenfassung: 3 Tage Skifahren in Las Leñas + 3 Tage Backcountry-Skifahren in Paso Pehuenche + 1 Extra-Tag",
+      "day1": {
+        "title": "Tag 1",
+        "description": "Reise nach Las Leñas und Skifahren auf und abseits der Pisten. Schnee- und Wetterbeobachtungen."
+      },
+      "day2": {
+        "title": "Tag 2",
+        "description": "Freeride-Tag mit Nutzung von Liften und Fellen. Nachmittags Entspannung in Termas de Lahuen-Co. Abendessen in Los Molles und Rückkehr nach Las Leñas."
+      },
+      "day3": {
+        "title": "Tag 3",
+        "description": "Backcountry-Skifahren in der Gegend, ohne Nutzung von Liften."
+      },
+      "day4": {
+        "title": "Tag 4",
+        "description": "Transfer von Las Leñas nach Los Castaños. Gelände- und Bedingungsbeobachtung. Ruhetag."
+      },
+      "day5": {
+        "title": "Tag 5",
+        "description": "Backcountry-Skifahren auf zu bestimmendem Gelände."
+      },
+      "day6": {
+        "title": "Tag 6",
+        "description": "Backcountry-Skifahren mit Skidoo im Valle del Límite."
+      },
+      "day7": {
+        "title": "Tag 7",
+        "description": "Backcountry-Skifahren in Los Castaños. Rückkehr nach Mendoza."
+      },
+      "day8": {
+        "title": "Tag 8",
+        "description": "Extra-Tag."
+      }
+    },
+    "aconcagua3to4Days": {
+      "title": "ANDEN-KORRIDOR VON ACONCAGUA – 3-4 TAGE",
+      "day1": {
+        "title": "Tag 1",
+        "description": "Reise von Mendoza nach Penitentes (2.650 m). Erkundung und Analyse der Schnee- und Wetterbedingungen."
+      },
+      "day2": {
+        "title": "Tag 2",
+        "description": "Backcountry-Skifahren auf zu bestimmendem Gelände."
+      },
+      "day3": {
+        "title": "Tag 3",
+        "description": "Backcountry-Skifahren mit Routen von 1.000 m Höhenunterschied oder mehr."
+      },
+      "day4": {
+        "title": "Tag 4",
+        "description": "Halbtägiges Backcountry-Skifahren. Rückkehr nach Mendoza."
+      }
+    },
+    "andeanSkiTrip12Days": {
+      "title": "ANDEAN SKI TRIP – 12 TAGE",
+      "description": "Eine einzigartige Reise durch die zentralen Anden von Argentinien und Chile, entworfen nach den Geschmäckern, Vorlieben und Fähigkeiten der Teilnehmer, mit der Führung von erfahrenen lokalen Guides.",
+      "includes": {
+        "title": "Beinhaltet:",
+        "item1": "Ganztägiges Backcountry-Skifahren.",
+        "item2": "Resort-Skifahren und Kombination von Pisten- und Freeride-Gelände.",
+        "item3": "Tour durch majestätische Andenlandschaften und Bergstraßen."
+      },
+      "conclusion": "Ein unvergleichliches Erlebnis von Abenteuer, Natur und Skifahren."
     }
   },
   "contact": {

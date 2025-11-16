@@ -18,6 +18,7 @@
     "cuyoPara2": "Los variados paquetes de nieve, orientaciones y una altitud promedio de 3500 metros sobre el nivel del mar ofrecen condiciones de nieve polvo que duran días.",
     "cuyoPara3": "Disfruta de la cultura de los Andes a través de un viaje de esquí.",
     "destinationsTitle": "Nuestros Destinos",
+    "itineraryButton": "Choose your trip Itinerary",
     "lasLenas": {
       "title": "Las Leñas",
       "para1": "Ubicado en el corazón de Los Andes, este centro de esquí fundado en el año 1983 representa actualmente uno de los centros de esquí más importantes de Sudamérica. Con su altura máxima de 3400 mts sobre el nivel del mar y 27 km de pistas.",
@@ -32,6 +33,94 @@
     "andeanCorridor": {
       "title": "Corredor Andino",
       "para1": "El Aconcagua, esa montaña que no sabemos si pertenece al Cielo o a la Tierra, gran guardián de los Andes, domina el espacio y la atención durante los años. Los Incas habitaron sus dominios y nosotros también lo haremos esquiando a sus pies o contemplando su majestuosidad desde montañas vecinas. ¿Alguna vez imaginaste esquiar a más de 4000 metros de altura? Esta es tu oportunidad."
+    }
+  },
+  "itinerary": {
+    "title": "Itinerarios de Viaje",
+    "pasoPehuenche4Days": {
+      "title": "SKI PASO PEHUENCHE – 4 DÍAS",
+      "day1": {
+        "title": "Día 1",
+        "description": "Viaje desde Mendoza a Los Castaños. Reconocimiento y estudio de las condiciones nivéometeorológicas."
+      },
+      "day2": {
+        "title": "Día 2",
+        "description": "Backcountry Ski en terreno a definir. Regreso a Los Castaños."
+      },
+      "day3": {
+        "title": "Día 3",
+        "description": "Día completo de Backcountry ski en el Valle del Límite con Skidoo (opcional). Regreso a Los Castaños."
+      },
+      "day4": {
+        "title": "Día 4",
+        "description": "Medio día de Backcountry ski en Los Castaños. Regreso a Mendoza."
+      }
+    },
+    "lasLenasPehuenche8Days": {
+      "title": "LAS LEÑAS – PASO PEHUENCHE – 8 DÍAS",
+      "summary": "Resumen: 3 días de ski en Las Leñas + 3 días de Backcountry ski en Paso Pehuenche. + 1 Día extra",
+      "day1": {
+        "title": "Día 1",
+        "description": "Viaje a Las Leñas y ski en pistas y fuera de pistas. Observaciones nivéo-meteorológicas."
+      },
+      "day2": {
+        "title": "Día 2",
+        "description": "Día de freeride utilizando medios de elevación y pieles de foca. Por la tarde, relajación en Termas de Lahuen-Co. Cena en Los Molles y regreso a Las Leñas."
+      },
+      "day3": {
+        "title": "Día 3",
+        "description": "Backcountry ski en la zona, sin uso de medios de elevación."
+      },
+      "day4": {
+        "title": "Día 4",
+        "description": "Traslado de Las Leñas a Los Castaños. Observación de terreno y condiciones. Día de descanso."
+      },
+      "day5": {
+        "title": "Día 5",
+        "description": "Backcountry ski en terreno a definir."
+      },
+      "day6": {
+        "title": "Día 6",
+        "description": "Backcountry ski con Skidoo en el Valle del Límite."
+      },
+      "day7": {
+        "title": "Día 7",
+        "description": "Backcountry ski en Los Castaños. Regreso a Mendoza."
+      },
+      "day8": {
+        "title": "Día 8",
+        "description": "Día extra."
+      }
+    },
+    "aconcagua3to4Days": {
+      "title": "CORREDOR ANDINO DEL ACONCAGUA – 3-4 DÍAS",
+      "day1": {
+        "title": "Día 1",
+        "description": "Viaje de Mendoza a Penitentes (2.650 m). Reconocimiento y análisis de condiciones nivéo-meteorológicas."
+      },
+      "day2": {
+        "title": "Día 2",
+        "description": "Backcountry ski en terreno a definir."
+      },
+      "day3": {
+        "title": "Día 3",
+        "description": "Backcountry ski con itinerarios de 1.000 m de desnivel o más."
+      },
+      "day4": {
+        "title": "Día 4",
+        "description": "Medio día de backcountry ski. Regreso a Mendoza."
+      }
+    },
+    "andeanSkiTrip12Days": {
+      "title": "ANDEAN SKI TRIP – 12 DÍAS",
+      "description": "Un viaje único por los Andes centrales de Argentina y Chile, diseñado según los gustos, preferencias y capacidades de los participantes, con la orientación de guías locales expertos.",
+      "includes": {
+        "title": "Incluye:",
+        "item1": "Días completos de backcountry ski.",
+        "item2": "Ski en resorts y combinación de pistas y terrenos de freeride.",
+        "item3": "Recorrido por majestuosos paisajes andinos y caminos de montaña."
+      },
+      "conclusion": "Una experiencia de aventura, naturaleza y ski sin igual."
     }
   },
   "contact": {
