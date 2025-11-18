@@ -42,6 +42,10 @@ function getAllowedOrigins(): string[] {
   allowedOrigins.push('http://127.0.0.1:3000');
 
   // Production - Add your production domain(s)
+  // Add both www and non-www versions
+  allowedOrigins.push('https://www.andeanskiguides.com');
+  allowedOrigins.push('https://andeanskiguides.com');
+
   if (process.env.NEXT_PUBLIC_SITE_URL) {
     allowedOrigins.push(process.env.NEXT_PUBLIC_SITE_URL);
   }
@@ -55,6 +59,11 @@ function getAllowedOrigins(): string[] {
   if (process.env.ALLOWED_ORIGINS) {
     const customOrigins = process.env.ALLOWED_ORIGINS.split(',').map(o => o.trim());
     allowedOrigins.push(...customOrigins);
+  }
+
+  // Log allowed origins in production for debugging
+  if (process.env.NODE_ENV === 'production') {
+    console.log('Allowed origins:', allowedOrigins);
   }
 
   return allowedOrigins;
@@ -112,6 +121,9 @@ export function verifyOrigin(request: Request): {
       origin: requestOrigin,
     };
   }
+
+  // Log blocked origin for debugging
+  console.error('CSRF: Blocked origin:', requestOrigin, 'Allowed origins:', allowedOrigins);
 
   return {
     allowed: false,
