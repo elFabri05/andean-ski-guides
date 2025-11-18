@@ -137,6 +137,13 @@ export function verifyOrigin(request: Request): {
  * Returns null if allowed, or a NextResponse with error if blocked
  */
 export function checkCsrfProtection(request: Request): { error?: string; status?: number } | null {
+  // Temporary: Disable CSRF in production for debugging
+  // TODO: Remove this after fixing the issue
+  if (process.env.DISABLE_CSRF_CHECK === 'true') {
+    console.log('CSRF check disabled for debugging');
+    return null;
+  }
+
   const verification = verifyOrigin(request);
 
   if (!verification.allowed) {

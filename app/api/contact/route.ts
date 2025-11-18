@@ -11,9 +11,16 @@ const resend = new Resend(process.env.RESEND_API_KEY);
 
 export async function POST(request: Request) {
   try {
+    // Log request headers for debugging
+    const origin = request.headers.get('origin');
+    const referer = request.headers.get('referer');
+    console.log('Contact API - Origin:', origin, 'Referer:', referer);
+    console.log('Contact API - All headers:', Object.fromEntries(request.headers.entries()));
+
     // CSRF Protection: Verify request origin
     const csrfCheck = checkCsrfProtection(request);
     if (csrfCheck) {
+      console.error('CSRF check failed:', csrfCheck);
       return NextResponse.json(
         { error: csrfCheck.error },
         { status: csrfCheck.status }
