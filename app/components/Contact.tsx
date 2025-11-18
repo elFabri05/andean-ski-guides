@@ -241,22 +241,22 @@ const Contact: React.FC = () => {
                 <Box>
                   <TextField
                     fullWidth
-                    label={t('contact.form.email')}
-                    name="email"
-                    type="email"
-                    value={formData.email}
+                    label={t('contact.form.phone')}
+                    name="phone"
+                    value={formData.phone}
                     onChange={handleChange}
-                    required
                     disabled={loading}
                   />
                 </Box>
                 <Box sx={{ gridColumn: { xs: '1', sm: '1 / -1' } }}>
                   <TextField
                     fullWidth
-                    label={t('contact.form.phone')}
-                    name="phone"
-                    value={formData.phone}
+                    label={t('contact.form.email')}
+                    name="email"
+                    type="email"
+                    value={formData.email}
                     onChange={handleChange}
+                    required
                     disabled={loading}
                   />
                 </Box>
