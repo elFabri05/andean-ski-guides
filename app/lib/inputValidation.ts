@@ -50,12 +50,15 @@ export function validateEmail(email: string): ValidationResult {
     errors.push('Email contains invalid consecutive dots');
   }
 
-  // Check for common typos in domains
+  // Check for common typos in domains (exact matches only, not contains)
   const domain = email.split('@')[1]?.toLowerCase();
   if (domain) {
-    // Common typo domains
-    const typoPatterns = ['gmial', 'gmai', 'yahooo', 'yaho', 'hotmial', 'outlok'];
-    if (typoPatterns.some(typo => domain.includes(typo))) {
+    // Common typo domains - exact matches to avoid false positives
+    const typoDomains = [
+      'gmial.com', 'gmai.com', 'yahooo.com', 'yaho.com',
+      'hotmial.com', 'outlok.com', 'gnail.com', 'gmil.com'
+    ];
+    if (typoDomains.includes(domain)) {
       errors.push('Email domain may contain a typo');
     }
   }
