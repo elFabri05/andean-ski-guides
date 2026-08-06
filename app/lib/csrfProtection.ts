@@ -5,6 +5,8 @@
  * Cross-Site Request Forgery (CSRF) attacks.
  */
 
+import { getPlatformDeployUrl } from './deployEnv';
+
 /**
  * Get the origin from the request headers
  * Checks both Origin and Referer headers
@@ -50,9 +52,11 @@ function getAllowedOrigins(): string[] {
     allowedOrigins.push(process.env.NEXT_PUBLIC_SITE_URL);
   }
 
-  // Vercel preview deployments
-  if (process.env.VERCEL_URL) {
-    allowedOrigins.push(`https://${process.env.VERCEL_URL}`);
+  // Preview / branch deployments get a hostname that cannot be known ahead of
+  // time. deployEnv resolves it from whichever host we are running on.
+  const platformDeployUrl = getPlatformDeployUrl();
+  if (platformDeployUrl) {
+    allowedOrigins.push(platformDeployUrl);
   }
 
   // Add custom domains from environment variable

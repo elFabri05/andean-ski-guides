@@ -1,34 +1,21 @@
+import { CLIENT_IP_HEADERS } from './deployEnv';
+
 /**
  * Extract the client IP address from the request
  * Handles various proxy and forwarding scenarios
+ *
+ * The header precedence is host-specific and lives in deployEnv.ts.
  */
 export function getClientIp(request: Request): string {
-  // Try to get IP from various headers (in order of preference)
-  const headers = request.headers;
+  for (const { name, isChain } of CLIENT_IP_HEADERS) {
+    const value = request.headers.get(name);
+    if (!value) {
+      continue;
+    }
 
-  // X-Forwarded-For header (may contain multiple IPs, first one is the client)
-  const forwardedFor = headers.get('x-forwarded-for');
-  if (forwardedFor) {
-    const ips = forwardedFor.split(',').map(ip => ip.trim());
-    return ips[0];
-  }
-
-  // X-Real-IP header (common with nginx)
-  const realIp = headers.get('x-real-ip');
-  if (realIp) {
-    return realIp;
-  }
-
-  // CF-Connecting-IP (Cloudflare)
-  const cfIp = headers.get('cf-connecting-ip');
-  if (cfIp) {
-    return cfIp;
-  }
-
-  // Vercel-specific header
-  const vercelIp = headers.get('x-vercel-forwarded-for');
-  if (vercelIp) {
-    return vercelIp;
+    // A chain header holds a list of proxies; the first entry is the
+    // originating client. Single-value headers are used as-is.
+    return isChain ? value.split(',').map(ip => ip.trim())[0] : value;
   }
 
   // Fallback to 'unknown' if no IP can be determined

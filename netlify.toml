@@ -1,0 +1,35 @@
+# Netlify deployment configuration.
+#
+# INACTIVE UNTIL THE SITE IS ACTUALLY DEPLOYED TO NETLIFY. Vercel does not read
+# this file, and @netlify/plugin-nextjs is only ever executed by Netlify's build
+# system -- having it installed as a devDependency does nothing on Vercel. This
+# file and any future vercel.json can coexist in the repo indefinitely.
+#
+# Deliberately NOT duplicated here:
+#
+#   Security headers. They are defined in next.config.ts headers() and
+#   @netlify/plugin-nextjs honours them, exactly as Vercel does. Restating them
+#   in a [[headers]] block would set them twice on statically served assets and
+#   let the two copies drift apart. next.config.ts stays the single source of
+#   truth for headers on every host.
+#
+#   Redirects and rewrites. The app has none at the platform layer, on either
+#   host, so there is nothing to mirror.
+
+[build]
+  command = "npm run build"
+  # @netlify/plugin-nextjs v5 consumes the standard Next build output directly.
+  publish = ".next"
+
+[build.environment]
+  # Next.js 16 requires Node >= 20.9. Netlify's default is older on some build
+  # images, so pin it rather than inherit.
+  NODE_VERSION = "20"
+
+[[plugins]]
+  package = "@netlify/plugin-nextjs"
+
+# `netlify dev` parity with `npm run dev`. Not used by production builds.
+[dev]
+  command = "npm run dev"
+  targetPort = 3000

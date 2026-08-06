@@ -7,7 +7,22 @@ import { checkCsrfProtection } from '@/app/lib/csrfProtection';
 import { validateContactForm, normalizeInput } from '@/app/lib/inputValidation';
 import { validateEmailHeaders } from '@/app/lib/emailHeaderProtection';
 
-const resend = new Resend(process.env.RESEND_API_KEY);
+/**
+ * Resend is constructed lazily, on first request, rather than at module load.
+ *
+ * Its constructor throws when the API key is absent, and Next evaluates this
+ * module during `next build` while collecting page data -- so eager
+ * construction turned RESEND_API_KEY into a *build-time* secret on every host.
+ * Deferring it keeps the key runtime-only, which is all it ever needed to be.
+ */
+let resendClient: Resend | null = null;
+
+function getResend(): Resend {
+  if (!resendClient) {
+    resendClient = new Resend(process.env.RESEND_API_KEY);
+  }
+  return resendClient;
+}
 
 export async function POST(request: Request) {
   try {
@@ -135,7 +150,7 @@ export async function POST(request: Request) {
     }
 
     // Send email using Resend
-    const data = await resend.emails.send({
+    const data = await getResend().emails.send({
       from: 'Andean Ski Guides <onboarding@resend.dev>', // Update this with your verified domain
       to: ['andeanskiguides@gmail.com'], // Your business email
       replyTo: safeReplyTo, // Validated and sanitized email
