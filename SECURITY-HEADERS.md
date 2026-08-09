@@ -15,12 +15,12 @@ Security headers are HTTP response headers that enhance the security of your web
 **Configuration:**
 ```
 default-src 'self';
-script-src 'self' 'unsafe-inline' 'unsafe-eval' https://maps.googleapis.com;
+script-src 'self' 'unsafe-inline' 'unsafe-eval';
 style-src 'self' 'unsafe-inline' https://fonts.googleapis.com;
-img-src 'self' data: https://maps.googleapis.com https://maps.gstatic.com;
+img-src 'self' data: https://tile.osm.org https://*.tile.osm.org https://tile.openstreetmap.org https://*.tile.openstreetmap.org;
 font-src 'self' https://fonts.gstatic.com data:;
-connect-src 'self' https://maps.googleapis.com;
-frame-src 'self' https://maps.googleapis.com;
+connect-src 'self';
+frame-src 'self';
 object-src 'none';
 base-uri 'self';
 form-action 'self';
@@ -37,7 +37,6 @@ upgrade-insecure-requests;
 **Note:** The use of `unsafe-inline` and `unsafe-eval` in script-src is required for:
 - Next.js runtime functionality
 - Material-UI/Emotion CSS-in-JS
-- Google Maps API
 
 For production, consider implementing CSP nonces for stricter inline script control.
 
@@ -223,12 +222,15 @@ Consider implementing:
 
 ## Common Issues & Solutions
 
-### Issue: Google Maps not loading
+### Issue: Map tiles not loading (grey map)
+The map is Leaflet + OpenStreetMap; tiles are plain images fetched from the OSM
+tile servers, and Leaflet itself is bundled with the app rather than loaded
+from a third-party host.
+
 **Solution:** Ensure CSP includes:
-- `script-src` includes `https://maps.googleapis.com`
-- `frame-src` includes `https://maps.googleapis.com`
-- `img-src` includes `https://maps.googleapis.com https://maps.gstatic.com`
-- `connect-src` includes `https://maps.googleapis.com`
+- `img-src` includes `https://tile.osm.org https://*.tile.osm.org` (and the
+  `tile.openstreetmap.org` equivalents, which `tile.osm.org` may redirect to)
+- `img-src` includes `data:` for Leaflet's inline marker/control assets
 
 ### Issue: Fonts not loading
 **Solution:** Check that CSP includes:

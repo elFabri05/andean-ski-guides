@@ -14,18 +14,19 @@ const nextConfig: NextConfig = {
             value: [
               // Default: only allow resources from same origin
               "default-src 'self'",
-              // Scripts: allow inline scripts (needed for Next.js), same origin, and Google Maps
-              "script-src 'self' 'unsafe-inline' 'unsafe-eval' https://maps.googleapis.com",
+              // Scripts: allow inline scripts (needed for Next.js) and same origin.
+              // Leaflet is bundled with the app, so no third-party script host.
+              "script-src 'self' 'unsafe-inline' 'unsafe-eval'",
               // Styles: allow inline styles (needed for MUI/Emotion), same origin, and Google Fonts
               "style-src 'self' 'unsafe-inline' https://fonts.googleapis.com",
-              // Images: allow same origin, data URIs, and Google Maps
-              "img-src 'self' data: https://maps.googleapis.com https://maps.gstatic.com",
+              // Images: allow same origin, data URIs, and OpenStreetMap tiles
+              "img-src 'self' data: https://tile.osm.org https://*.tile.osm.org https://tile.openstreetmap.org https://*.tile.openstreetmap.org",
               // Fonts: allow same origin and Google Fonts
               "font-src 'self' https://fonts.gstatic.com data:",
-              // Connect: allow same origin and Google Maps API
-              "connect-src 'self' https://maps.googleapis.com",
-              // Frames: allow Google Maps
-              "frame-src 'self' https://maps.googleapis.com",
+              // Connect: same origin only
+              "connect-src 'self'",
+              // Frames: same origin only
+              "frame-src 'self'",
               // Object/Embed: disallow plugins
               "object-src 'none'",
               // Base URI: restrict to same origin

@@ -10,7 +10,6 @@ cp .env.example .env.local
 ```
 
 2. Add your API keys to `.env.local`:
-   - **Google Maps API Key**: Get it from [Google Cloud Console](https://console.cloud.google.com/google/maps-apis)
    - **Resend API Key**: Sign up at [resend.com](https://resend.com) and get your key from [API Keys](https://resend.com/api-keys)
      - Free tier includes: 100 emails/day, 3,000 emails/month
 
