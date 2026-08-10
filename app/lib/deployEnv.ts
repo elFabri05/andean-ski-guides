@@ -14,31 +14,70 @@
 const CANONICAL_SITE_URL = 'https://andeanskiguides.com';
 
 /**
- * URL of the *current* deployment, as injected by the hosting platform.
+ * Normalise a host-injected value to a bare origin: scheme + host (+ port),
+ * with no path and no trailing slash, so it can be compared against a request's
+ * Origin header by string equality.
+ *
+ * Hosts are inconsistent about the scheme -- Vercel injects bare hostnames,
+ * Netlify injects full URLs -- so it is added only when absent. Anything that
+ * does not parse as a URL is dropped rather than guessed at.
+ */
+function toOrigin(value: string | undefined): string | undefined {
+  const trimmed = value?.trim();
+  if (!trimmed) {
+    return undefined;
+  }
+
+  const hasScheme = /^[a-z][a-z0-9+.-]*:\/\//i.test(trimmed);
+
+  try {
+    return new URL(hasScheme ? trimmed : `https://${trimmed}`).origin;
+  } catch {
+    return undefined;
+  }
+}
+
+/**
+ * Every origin the current deployment answers on, as injected by the hosting
+ * platform, in descending order of stability. Empty when running locally or on
+ * a host that injects nothing.
  *
  * This is what makes preview/branch deployments work: each one gets its own
  * hostname, which is not known ahead of time and therefore cannot be hardcoded
  * in the allowed-origin list.
  *
- * Returns undefined when running locally or on a host that injects nothing.
+ * All applicable values are returned rather than the first match, because a
+ * single deployment is typically reachable on several hostnames at once -- on
+ * Netlify a production deploy answers on both the primary site URL and its
+ * per-deploy URL, and a request from either is equally legitimate. Returning
+ * only the first meant whichever hostname the visitor actually used had to be
+ * the one that happened to win the lookup.
  */
-export function getPlatformDeployUrl(): string | undefined {
-  // Vercel: bare hostname, no scheme. Set on every deployment, previews included.
-  const vercelUrl = process.env.VERCEL_URL;
-  if (vercelUrl) {
-    return `https://${vercelUrl}`;
+export function getPlatformDeployUrls(): string[] {
+  const candidates = [
+    // Vercel: bare hostnames, no scheme. Set on every deployment, previews
+    // included. VERCEL_BRANCH_URL is the branch permalink, stable across
+    // rebuilds; VERCEL_URL is unique per deployment.
+    process.env.VERCEL_URL,
+    process.env.VERCEL_BRANCH_URL,
+
+    // Netlify: full URLs including scheme. URL is the primary site address;
+    // DEPLOY_PRIME_URL is the branch/preview permalink and stays stable across
+    // rebuilds of the same branch; DEPLOY_URL is unique per build.
+    process.env.URL,
+    process.env.DEPLOY_PRIME_URL,
+    process.env.DEPLOY_URL,
+  ];
+
+  const origins: string[] = [];
+  for (const candidate of candidates) {
+    const origin = toOrigin(candidate);
+    if (origin && !origins.includes(origin)) {
+      origins.push(origin);
+    }
   }
 
-  // Netlify: full URLs including scheme.
-  // DEPLOY_PRIME_URL is the branch/preview permalink and stays stable across
-  // rebuilds of the same branch, so it is preferred over DEPLOY_URL, which is
-  // unique per build.
-  const netlifyUrl = process.env.DEPLOY_PRIME_URL || process.env.DEPLOY_URL;
-  if (netlifyUrl) {
-    return netlifyUrl;
-  }
-
-  return undefined;
+  return origins;
 }
 
 /**

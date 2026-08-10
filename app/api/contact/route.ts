@@ -26,11 +26,11 @@ function getResend(): Resend {
 
 export async function POST(request: Request) {
   try {
-    // Log request headers for debugging
-    const origin = request.headers.get('origin');
-    const referer = request.headers.get('referer');
-    console.log('Contact API - Origin:', origin, 'Referer:', referer);
-    console.log('Contact API - All headers:', Object.fromEntries(request.headers.entries()));
+    // Origin only, and only outside production: the full header set carries
+    // cookies and authorization headers, which must never reach the logs.
+    if (process.env.NODE_ENV !== 'production') {
+      console.log('Contact API - Origin:', request.headers.get('origin'));
+    }
 
     // CSRF Protection: Verify request origin
     const csrfCheck = checkCsrfProtection(request);

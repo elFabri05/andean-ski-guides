@@ -5,7 +5,7 @@
  * Cross-Site Request Forgery (CSRF) attacks.
  */
 
-import { getPlatformDeployUrl } from './deployEnv';
+import { getPlatformDeployUrls } from './deployEnv';
 
 /**
  * Get the origin from the request headers
@@ -52,12 +52,10 @@ function getAllowedOrigins(): string[] {
     allowedOrigins.push(process.env.NEXT_PUBLIC_SITE_URL);
   }
 
-  // Preview / branch deployments get a hostname that cannot be known ahead of
-  // time. deployEnv resolves it from whichever host we are running on.
-  const platformDeployUrl = getPlatformDeployUrl();
-  if (platformDeployUrl) {
-    allowedOrigins.push(platformDeployUrl);
-  }
+  // Preview / branch deployments get hostnames that cannot be known ahead of
+  // time, and one deployment usually answers on more than one of them.
+  // deployEnv resolves them from whichever host we are running on.
+  allowedOrigins.push(...getPlatformDeployUrls());
 
   // Add custom domains from environment variable
   if (process.env.ALLOWED_ORIGINS) {
@@ -141,13 +139,6 @@ export function verifyOrigin(request: Request): {
  * Returns null if allowed, or a NextResponse with error if blocked
  */
 export function checkCsrfProtection(request: Request): { error?: string; status?: number } | null {
-  // Temporary: Disable CSRF in production for debugging
-  // TODO: Remove this after fixing the issue
-  if (process.env.DISABLE_CSRF_CHECK === 'true') {
-    console.log('CSRF check disabled for debugging');
-    return null;
-  }
-
   const verification = verifyOrigin(request);
 
   if (!verification.allowed) {
