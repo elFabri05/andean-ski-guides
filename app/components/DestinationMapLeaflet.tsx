@@ -10,15 +10,24 @@ import markerShadow from 'leaflet/dist/images/marker-shadow.png';
 import { DESTINATIONS } from './destinations';
 
 /**
+ * Next's types declare a PNG import as StaticImageData, but the value that
+ * actually arrives depends on the bundler: Turbopack hands back a plain URL
+ * string, webpack an object with `.src`. Reading `.src` unconditionally
+ * typechecks and then yields undefined at runtime under Turbopack, so accept
+ * both shapes.
+ */
+const assetUrl = (asset: string | { src: string }): string =>
+  typeof asset === 'string' ? asset : asset.src;
+
+/**
  * Leaflet's default icon resolves its image URLs relative to leaflet.css, a
  * path no bundler preserves -- markers render as broken images unless the URLs
- * are pointed at the assets the bundler actually emitted. Importing the PNGs
- * gives Next's static-image objects, whose `.src` is the emitted URL.
+ * are pointed at the assets the bundler actually emitted.
  */
 const destinationIcon = L.icon({
-  iconUrl: markerIcon.src,
-  iconRetinaUrl: markerIcon2x.src,
-  shadowUrl: markerShadow.src,
+  iconUrl: assetUrl(markerIcon),
+  iconRetinaUrl: assetUrl(markerIcon2x),
+  shadowUrl: assetUrl(markerShadow),
   iconSize: [25, 41],
   iconAnchor: [12, 41],
   popupAnchor: [1, -34],

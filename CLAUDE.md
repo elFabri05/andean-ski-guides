@@ -57,10 +57,16 @@ no props) — imported by `TripDescription`. Keep that interface stable.
   with `ssr: false` because Leaflet touches `window` at import time.
 
 Two things there look redundant but are not. The default marker icons are
-rebuilt from imported PNGs (`markerIcon.src`) because Leaflet's stock icon URLs
-resolve relative to `leaflet.css` and 404 under every bundler. And the wrapper
-`Box` sets an explicit height because Leaflet sizes itself to its container — a
-container with no height collapses to 0px and renders nothing.
+rebuilt from imported PNGs because Leaflet's stock icon URLs resolve relative to
+`leaflet.css` and 404 under every bundler. And the wrapper `Box` sets an
+explicit height because Leaflet sizes itself to its container — a container with
+no height collapses to 0px and renders nothing.
+
+The `assetUrl()` helper next to those imports is load-bearing too. Next types a
+PNG import as `StaticImageData`, but **Turbopack actually returns a plain URL
+string**, so `markerIcon.src` typechecks and is `undefined` at runtime
+(`iconUrl not set in Icon options`). `tsc` and `next build` both pass while the
+page throws, so image imports cannot be trusted to be objects here.
 
 Tiles come from OpenStreetMap. The `© OpenStreetMap contributors` attribution is
 required by their terms; don't drop it. `tile.osm.org` is fine at current
