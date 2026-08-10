@@ -101,12 +101,14 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <head>
-        <StructuredData />
-      </head>
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
+        {/* JSON-LD renders in the body rather than <head>: crawlers read it in
+            either position, and staying out of <head> keeps it clear of the
+            browser extensions that inject scripts there, which collide with
+            React during hydration. */}
+        <StructuredData />
         <I18nProvider>
           <ThemeRegistry>{children}</ThemeRegistry>
         </I18nProvider>
