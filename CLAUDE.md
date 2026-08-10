@@ -73,6 +73,28 @@ required by their terms; don't drop it. `tile.osm.org` is fine at current
 traffic but the OSMF tile policy prohibits heavy use — a real traffic increase
 means moving to a tile provider with an SLA.
 
+## Internationalisation
+
+`app/i18n.ts` pins `lng: 'en'` instead of letting the detector choose, and this
+is deliberate. The module is imported by a client component, so it also runs
+during SSR, where `localStorage` and `navigator` do not exist — detection there
+always yields English. If the browser detects at init, the client's first render
+disagrees with the server for every non-English visitor, which React reports as
+a whole-tree hydration failure. `I18nProvider` applies the real language in an
+effect, after hydration has committed.
+
+Two consequences worth keeping intact:
+
+- **Detector caching is off** (`caches: []`). i18next writes its cache during
+  init, so with a pinned `lng` it stamped `"en"` into localStorage before the
+  visitor was ever detected, and then read its own stamp back — every new
+  visitor stuck on English. `I18nProvider` persists on `languageChanged`
+  instead, which also covers the language selector.
+- **`<html lang>` is server-rendered as `en`** and updated by that same handler.
+
+Anything that changes language must go through `i18n.changeLanguage` so both
+side effects fire.
+
 ## Security headers
 
 `next.config.ts` `headers()` is the **single source of truth** for CSP and all
