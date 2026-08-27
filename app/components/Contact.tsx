@@ -175,6 +175,7 @@ const Contact: React.FC = () => {
                   alignItems: 'center',
                   justifyContent: 'center',
                   minHeight: { xs: '120px', md: '140px' },
+                  width: { md: '440px' },
                   flex: { sm: 1, md: 'none' },
                 }}
               >
