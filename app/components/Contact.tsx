@@ -12,7 +12,6 @@ import {
   CircularProgress,
 } from '@mui/material';
 import EmailIcon from '@mui/icons-material/Email';
-import PhoneIcon from '@mui/icons-material/Phone';
 import InstagramIcon from '@mui/icons-material/Instagram';
 import { useTranslation } from 'react-i18next';
 
@@ -111,13 +110,7 @@ const Contact: React.FC = () => {
   const contactInfo = [
     {
       icon: <EmailIcon sx={{ fontSize: { xs: 35, md: 40 } }} />,
-      title: t('contact.email'),
       content: 'andeanskiguides@gmail.com',
-    },
-    {
-      icon: <PhoneIcon sx={{ fontSize: { xs: 35, md: 40 } }} />,
-      title: t('contact.phone'),
-      content: '+43670550353',
     },
   ];
 
@@ -188,14 +181,6 @@ const Contact: React.FC = () => {
                 <Box sx={{ color: 'primary.main', mb: 1.5 }}>
                   {info.icon}
                 </Box>
-                <Typography
-                  variant="h6"
-                  component="h3"
-                  gutterBottom
-                  sx={{ fontSize: { xs: '1.1rem', md: '1.25rem' } }}
-                >
-                  {info.title}
-                </Typography>
                 <Typography
                   variant="body2"
                   color="text.secondary"
