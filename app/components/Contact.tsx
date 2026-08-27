@@ -110,7 +110,7 @@ const Contact: React.FC = () => {
   const contactInfo = [
     {
       icon: <EmailIcon sx={{ fontSize: { xs: 35, md: 40 } }} />,
-      content: 'andeanskiguides@gmail.com',
+      title: t('contact.email'),
     },
   ];
 
@@ -182,11 +182,11 @@ const Contact: React.FC = () => {
                   {info.icon}
                 </Box>
                 <Typography
-                  variant="body2"
-                  color="text.secondary"
-                  sx={{ fontSize: { xs: '0.875rem', md: '0.875rem' } }}
+                  variant="h6"
+                  component="h3"
+                  sx={{ fontSize: { xs: '1.1rem', md: '1.25rem' } }}
                 >
-                  {info.content}
+                  {info.title}
                 </Typography>
               </Paper>
             ))}

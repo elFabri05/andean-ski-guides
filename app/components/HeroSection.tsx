@@ -231,30 +231,6 @@ const HeroSection: React.FC<HeroSectionProps> = ({ onTabChange, currentTab }) =>
           </Container>
         </Box>
       )}
-
-      {/* Next Trip Banner */}
-      {currentTab === 0 && (
-        <Box
-          sx={{
-            backgroundColor: '#FF8C00',
-            color: 'white',
-            py: 2,
-            textAlign: 'center',
-          }}
-        >
-          <Container maxWidth="md">
-            <Typography
-              variant="h6"
-              sx={{
-                fontSize: { xs: '1rem', md: '1.2rem' },
-                fontWeight: 600,
-              }}
-            >
-              {t('hero.nextTrip')}
-            </Typography>
-          </Container>
-        </Box>
-      )}
     </Box>
   );
 };
